@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>theDailySets | Hair Nutrition Guide</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black: "#080B09",
+            dark: "#101512",
+            green: "#B7F34A",
+            greenDark: "#17351F",
+            cream: "#F3F4EC",
+            muted: "#9DA69E"
+          },
+
+          fontFamily: {
+            sans: ["DM Sans", "sans-serif"],
+            display: ["Poppins", "sans-serif"]
+          },
+
+          animation: {
+            float: "float 5s ease-in-out infinite",
+            floatSlow: "floatSlow 8s ease-in-out infinite",
+            reveal: "reveal .8s ease forwards",
+            marquee: "marquee 18s linear infinite"
+          },
+
+          keyframes: {
+
+            float: {
+              "0%,100%": {
+                transform: "translateY(0)"
+              },
+              "50%": {
+                transform: "translateY(-12px)"
+              }
+            },
+
+            floatSlow: {
+              "0%,100%": {
+                transform: "translate(0,0)"
+              },
+              "50%": {
+                transform: "translate(20px,-20px)"
+              }
+            },
+
+            reveal: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(50px)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)"
+              }
+            },
+
+            marquee: {
+              "0%": {
+                transform: "translateX(0)"
+              },
+              "100%": {
+                transform: "translateX(-50%)"
+              }
+            }
+
+          }
+        }
+      }
+    }
+  </script>
+
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #080B09;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Poppins", sans-serif;
+    }
+
+
+    /* Noise */
+
+    .noise {
+      background-image:
+        radial-gradient(
+          rgba(255,255,255,.08) 1px,
+          transparent 1px
+        );
+
+      background-size: 4px 4px;
+    }
+
+
+    /* Glow */
+
+    .green-glow {
+      box-shadow:
+        0 0 80px rgba(183,243,74,.12);
+    }
+
+
+    /* Reveal */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* Superfood card */
+
+    .food-card {
+      transition:
+        transform .45s ease,
+        border-color .45s ease,
+        background .45s ease;
+    }
+
+    .food-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(183,243,74,.45);
+      background: #151B17;
+    }
+
+
+    /* Number */
+
+    .number {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(183,243,74,.08);
+    }
+
+
+    /* Marquee */
+
+    .marquee-wrapper {
+      overflow: hidden;
+    }
+
+  </style>
+
+</head>
+
+
+<body class="text-white">
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header
+  class="fixed top-0 left-0 right-0 z-50
+         border-b border-white/10
+         bg-black/80 backdrop-blur-xl"
+>
+
+  <nav
+    class="max-w-7xl mx-auto
+           px-5 lg:px-8
+           h-20
+           flex items-center justify-between"
+  >
+
+    <!-- Logo -->
+
+    <a
+      href="#home"
+      class="flex items-center gap-3"
+    >
+
+      <div
+        class="w-11 h-11
+               rounded-xl
+               bg-black
+               text-black
+               flex items-center justify-center
+               font-black"
+      >
+      <img src="assets/logo.png" alt="">
+      </div>
+
+
+      <div>
+
+        <div
+          class="font-display font-bold tracking-tight"
+        >
+          thedailysets
+        </div>
+
+        <div
+          class="text-[10px]
+                 uppercase
+                 tracking-[.2em]
+                 text-muted"
+        >
+          Fitness • Nutrition
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- Desktop Navigation -->
+
+    <div
+      class="hidden md:flex
+             items-center gap-8
+             text-sm
+             text-white/70"
+    >
+
+      <a
+        href="#superfoods"
+        class="hover:text-green transition"
+      >
+        Superfoods
+      </a>
+
+      <a
+        href="#tips"
+        class="hover:text-green transition"
+      >
+        Daily Tips
+      </a>
+
+      <a
+        href="#guide"
+        class="hover:text-green transition"
+      >
+        Hair Guide
+      </a>
+
+    </div>
+
+
+    <!-- Instagram -->
+
+    <a
+      href="https://www.instagram.com/_thedailyset_/"
+      target="_blank"
+      class="
+        bg-green
+        text-black
+        px-5 py-2.5
+        rounded-full
+        font-bold
+        text-sm
+        hover:scale-105
+        transition
+      "
+    >
+      Follow
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+  id="home"
+  class="relative
+         min-h-screen
+         flex items-center
+         overflow-hidden
+         noise"
+>
+
+
+  <!-- Glow -->
+
+  <div
+    class="
+      absolute
+      w-[500px]
+      h-[500px]
+      rounded-full
+      bg-green/10
+      blur-[120px]
+      -top-40
+      -right-40
+      animate-floatSlow
+    "
+  ></div>
+
+
+  <div
+    class="
+      absolute
+      w-[350px]
+      h-[350px]
+      rounded-full
+      bg-green/5
+      blur-[100px]
+      bottom-0
+      left-0
+    "
+  ></div>
+
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-5 lg:px-8
+      pt-32
+      pb-20
+      w-full
+    "
+  >
+
+    <div
+      class="
+        grid
+        lg:grid-cols-[1.1fr_.9fr]
+        gap-16
+        items-center
+      "
+    >
+
+
+      <!-- HERO CONTENT -->
+
+      <div class="reveal">
+
+        <div
+          class="
+            inline-flex
+            items-center
+            gap-2
+            border
+            border-green/20
+            rounded-full
+            px-4 py-2
+            text-xs
+            uppercase
+            tracking-[.2em]
+            text-green
+          "
+        >
+
+          <span
+            class="w-2 h-2 rounded-full bg-green"
+          ></span>
+
+          Pure Vegetarian Nutrition
+
+        </div>
+
+
+        <h1
+          class="
+            mt-7
+            text-5xl
+            sm:text-6xl
+            lg:text-8xl
+            font-extrabold
+            tracking-tight
+            leading-[.95]
+          "
+        >
+
+          FEED YOUR
+
+          <span class="text-green">
+            HAIR.
+          </span>
+
+          <br />
+
+          GROW WITHIN.
+
+        </h1>
+
+
+        <p
+          class="
+            mt-7
+            max-w-xl
+            text-lg
+            leading-8
+            text-white/60
+          "
+        >
+          A practical vegetarian nutrition guide featuring
+          nutrient-rich foods that can be part of a balanced
+          diet supporting normal hair and scalp health.
+        </p>
+
+
+        <div class="mt-9 flex flex-wrap gap-4">
+
+          <a
+            href="#superfoods"
+            class="
+              bg-green
+              text-black
+              px-7 py-4
+              rounded-full
+              font-bold
+              hover:scale-105
+              transition
+            "
+          >
+            Explore Superfoods
+          </a>
+
+
+          <a
+            href="#guide"
+            class="
+              border
+              border-white/20
+              px-7 py-4
+              rounded-full
+              font-bold
+              hover:border-green
+              hover:text-green
+              transition
+            "
+          >
+            Read Guide
+          </a>
+
+        </div>
+
+
+        <!-- Stats -->
+
+        <div
+          class="
+            mt-12
+            flex
+            flex-wrap
+            gap-10
+            border-t
+            border-white/10
+            pt-8
+          "
+        >
+
+          <div>
+
+            <div class="text-3xl font-bold text-green">
+              10
+            </div>
+
+            <div class="text-xs text-muted mt-1">
+              Vegetarian Foods
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="text-3xl font-bold text-green">
+              6+
+            </div>
+
+            <div class="text-xs text-muted mt-1">
+              Key Nutrients
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="text-3xl font-bold text-green">
+              100%
+            </div>
+
+            <div class="text-xs text-muted mt-1">
+              Plant-Friendly Options
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO VISUAL -->
+
+      <div
+        class="
+          relative
+          reveal
+          lg:pl-10
+        "
+      >
+
+        <div
+          class="
+            absolute
+            inset-8
+            bg-green/20
+            blur-[80px]
+            rounded-full
+          "
+        ></div>
+
+
+        <div
+          class="
+            relative
+            bg-[#111612]
+            border
+            border-white/10
+            rounded-[2rem]
+            p-4
+            green-glow
+            animate-float
+          "
+        >
+
+          <img
+            src="assets/ChatGPT Image Sep 29, 2026, 07_07_21 PM.png"
+            alt="Vegetarian nutrition"
+            class="
+              w-full
+              h-[580px]
+              object-cover
+              object-top
+              rounded-[1.5rem]
+              
+            "
+          >
+
+
+          <div
+            class="
+              absolute
+              bottom-8
+              left-8
+              right-8
+              bg-black/80
+              backdrop-blur-xl
+              border
+              border-white/10
+              rounded-2xl
+              p-5
+            "
+          >
+
+            <div
+              class="
+                text-xs
+                uppercase
+                tracking-[.2em]
+                text-green
+              "
+            >
+              The Daily Sets
+            </div>
+
+            <div class="mt-2 font-bold text-lg">
+              Nutrition starts from within.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MARQUEE
+========================================================= -->
+
+<div
+  class="
+    marquee-wrapper
+    border-y
+    border-white/10
+    py-5
+    bg-[#0D110F]
+  "
+>
+
+  <div
+    class="
+      flex
+      whitespace-nowrap
+      animate-marquee
+      w-max
+    "
+  >
+
+    <div
+      class="
+        text-sm
+        uppercase
+        tracking-[.25em]
+        text-white/40
+        mx-8
+      "
+    >
+      CHIA SEEDS • FLAXSEEDS • WALNUTS • PUMPKIN SEEDS • AMLA • METHI •
+    </div>
+
+    <div
+      class="
+        text-sm
+        uppercase
+        tracking-[.25em]
+        text-green
+        mx-8
+      "
+    >
+      CHIA SEEDS • FLAXSEEDS • WALNUTS • PUMPKIN SEEDS • AMLA • METHI •
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section
+  id="guide"
+  class="py-24 bg-[#0D110F]"
+>
+
+  <div
+    class="
+      max-w-4xl
+      mx-auto
+      px-5
+      text-center
+      reveal
+    "
+  >
+
+    <p
+      class="
+        text-green
+        text-xs
+        uppercase
+        tracking-[.3em]
+        font-bold
+      "
+    >
+      HAIR NUTRITION GUIDE
+    </p>
+
+
+    <h2
+      class="
+        mt-5
+        text-4xl
+        sm:text-6xl
+        font-extrabold
+      "
+    >
+      Let your hair
+      <span class="text-green">
+        reflect your health.
+      </span>
+    </h2>
+
+
+    <p
+      class="
+        mt-7
+        text-white/60
+        text-lg
+        leading-8
+      "
+    >
+      Beautiful, strong-looking hair does not start with
+      expensive products alone. A balanced diet and adequate
+      nutrient intake are important parts of overall health.
+    </p>
+
+
+    <p
+      class="
+        mt-5
+        text-white/50
+        leading-7
+      "
+    >
+      Below are vegetarian foods that provide useful nutrients
+      and can be included in a varied, balanced diet.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SUPERFOODS
+========================================================= -->
+
+<section
+  id="superfoods"
+  class="py-24 bg-black"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-5 lg:px-8"
+  >
+
+    <!-- Heading -->
+
+    <div
+      class="
+        flex
+        flex-col
+        md:flex-row
+        md:items-end
+        justify-between
+        gap-6
+        reveal
+      "
+    >
+
+      <div>
+
+        <p
+          class="
+            text-green
+            text-xs
+            uppercase
+            tracking-[.25em]
+            font-bold
+          "
+        >
+          01 — 10
+        </p>
+
+        <h2
+          class="
+            mt-3
+            text-4xl
+            sm:text-6xl
+            font-extrabold
+          "
+        >
+          Vegetarian
+          <span class="text-green">
+            Superfoods
+          </span>
+        </h2>
+
+      </div>
+
+
+      <p
+        class="
+          max-w-md
+          text-white/50
+          leading-7
+        "
+      >
+        Simple foods. Useful nutrients.
+        Easy ways to add them to your everyday meals.
+      </p>
+
+    </div>
+
+
+
+    <!-- FOOD GRID -->
+
+    <div
+      class="
+        mt-14
+        grid
+        md:grid-cols-2
+        gap-5
+      "
+    >
+
+
+      <!-- 01 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          relative
+          overflow-hidden
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <span class="number absolute right-6 top-5">
+          01
+        </span>
+
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex
+            items-center
+            justify-center
+            text-2xl
+          "
+        >
+          🌱
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Chia Seeds
+        </h3>
+
+
+        <div
+          class="
+            mt-5
+            grid
+            sm:grid-cols-2
+            gap-4
+          "
+        >
+
+          <div>
+
+            <p class="text-xs uppercase text-green tracking-widest">
+              Nutrients
+            </p>
+
+            <p class="mt-2 text-white/60">
+              Omega-3, Protein, Zinc
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <p class="text-xs uppercase text-green tracking-widest">
+              How to use
+            </p>
+
+            <p class="mt-2 text-white/60">
+              Soak 1 tbsp overnight and add to breakfast
+              or smoothies.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 02 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🌾
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Flaxseeds
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Omega-3 and Vitamin E.
+        </p>
+
+
+        <div class="mt-5">
+
+          <p class="text-xs uppercase text-green tracking-widest">
+            How to use
+          </p>
+
+          <p class="mt-2 text-white/60 leading-7">
+            Grind and add to oats, smoothies or
+            knead into roti dough.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 03 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🥜
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Walnuts
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Omega-3 and biotin.
+        </p>
+
+
+        <p class="mt-5 text-white/60 leading-7">
+          A convenient plant-based source of healthy fats.
+          Try 4–5 soaked walnuts in the morning if they
+          suit your diet.
+        </p>
+
+      </article>
+
+
+
+      <!-- 04 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🎃
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Pumpkin Seeds
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Zinc, Magnesium and Iron.
+        </p>
+
+
+        <p class="mt-5 text-white/60 leading-7">
+          Eat roasted or sprinkle over salads,
+          oats or cereals.
+        </p>
+
+      </article>
+
+
+
+      <!-- 05 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🌿
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Moringa Powder
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Iron, Vitamin A and Zinc.
+        </p>
+
+
+        <p class="mt-5 text-white/60 leading-7">
+          Can be mixed in water, smoothies or suitable
+          foods. Start with a small amount if new to it.
+        </p>
+
+      </article>
+
+
+
+      <!-- 06 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🫘
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Chickpeas (Chana)
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Protein, Zinc and Biotin.
+        </p>
+
+
+        <p class="mt-5 text-white/60 leading-7">
+          Eat boiled in salads, use as a snack,
+          or prepare hummus.
+        </p>
+
+      </article>
+
+
+
+      <!-- 07 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🧀
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Paneer / Tofu
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Protein, Calcium and Iron.
+        </p>
+
+
+        <p class="mt-5 text-white/60 leading-7">
+          Use around 100–150g as part of lunch or dinner,
+          depending on your overall dietary needs.
+        </p>
+
+      </article>
+
+
+
+      <!-- 08 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🥜
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Peanuts (Mungfali)
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Biotin and Protein.
+        </p>
+
+
+        <p class="mt-5 text-white/60 leading-7">
+          Enjoy roasted peanuts as a snack or use
+          natural peanut butter with breakfast.
+        </p>
+
+      </article>
+
+
+
+      <!-- 09 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🍋
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Amla
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Vitamin C and antioxidants.
+        </p>
+
+
+        <p class="mt-5 text-white/60 leading-7">
+          Eat fresh/raw or use a suitable amount of
+          amla powder mixed with water or food.
+        </p>
+
+      </article>
+
+
+
+      <!-- 10 -->
+
+      <article
+        class="
+          food-card
+          reveal
+          bg-[#101512]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-7
+        "
+      >
+
+        <div
+          class="
+            w-14 h-14
+            rounded-2xl
+            bg-green
+            text-black
+            flex items-center justify-center
+            text-2xl
+          "
+        >
+          🌿
+        </div>
+
+
+        <h3 class="mt-7 text-2xl font-bold">
+          Fenugreek Seeds
+          <span class="text-white/40">
+            (Methi Dana)
+          </span>
+        </h3>
+
+
+        <p class="mt-4 text-white/50">
+          Protein, Iron, Nicotinic Acid and Lecithin.
+        </p>
+
+
+        <div class="mt-5 space-y-2 text-white/60">
+
+          <p>✓ Can be included as part of a balanced diet</p>
+
+          <p>✓ Soak overnight and consume in the morning</p>
+
+          <p>✓ Or roast, grind and mix with suitable foods</p>
+
+          <p>✓ Can also be sprouted and eaten with meals</p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DAILY TIPS
+========================================================= -->
+
+<section
+  id="tips"
+  class="py-24 bg-[#0D110F]"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-5 lg:px-8"
+  >
+
+    <div class="text-center reveal">
+
+      <p
+        class="
+          text-green
+          text-xs
+          uppercase
+          tracking-[.25em]
+          font-bold
+        "
+      >
+        DAILY BASICS
+      </p>
+
+
+      <h2
+        class="
+          mt-4
+          text-4xl
+          sm:text-6xl
+          font-extrabold
+        "
+      >
+        Don't forget the
+        <span class="text-green">
+          basics.
+        </span>
+      </h2>
+
+    </div>
+
+
+    <div
+      class="
+        grid
+        md:grid-cols-2
+        gap-5
+        mt-14
+      "
+    >
+
+
+      <!-- Hydration -->
+
+      <div
+        class="
+          reveal
+          bg-[#151B17]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-8
+          hover:border-green/40
+          transition
+        "
+      >
+
+        <div class="text-5xl">
+          💧
+        </div>
+
+
+        <h3
+          class="
+            text-3xl
+            font-bold
+            mt-7
+          "
+        >
+          Hydration
+        </h3>
+
+
+        <p
+          class="
+            mt-4
+            text-white/60
+            leading-7
+          "
+        >
+          Drink enough water throughout the day.
+          Individual needs vary based on body size,
+          activity, climate and other factors.
+        </p>
+
+
+        <div
+          class="
+            mt-7
+            inline-block
+            bg-green/10
+            text-green
+            px-4 py-2
+            rounded-full
+            text-sm
+            font-bold
+          "
+        >
+          Stay consistently hydrated
+        </div>
+
+      </div>
+
+
+
+      <!-- Vitamin D -->
+
+      <div
+        class="
+          reveal
+          bg-[#151B17]
+          border
+          border-white/10
+          rounded-[2rem]
+          p-8
+          hover:border-green/40
+          transition
+        "
+      >
+
+        <div class="text-5xl">
+          ☀️
+        </div>
+
+
+        <h3
+          class="
+            text-3xl
+            font-bold
+            mt-7
+          "
+        >
+          Vitamin D
+        </h3>
+
+
+        <p
+          class="
+            mt-4
+            text-white/60
+            leading-7
+          "
+        >
+          Vitamin D is difficult to obtain from food alone.
+          Sunlight and, when appropriate, testing or supplements
+          can be discussed with a healthcare professional.
+        </p>
+
+
+        <div
+          class="
+            mt-7
+            inline-block
+            bg-green/10
+            text-green
+            px-4 py-2
+            rounded-full
+            text-sm
+            font-bold
+          "
+        >
+          Check your levels if needed
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL MESSAGE
+========================================================= -->
+
+<section
+  class="
+    relative
+    py-28
+    bg-green
+    text-black
+    overflow-hidden
+  "
+>
+
+  <div
+    class="
+      absolute
+      w-96 h-96
+      bg-white/20
+      rounded-full
+      blur-3xl
+      -top-40
+      -right-40
+    "
+  ></div>
+
+
+  <div
+    class="
+      max-w-4xl
+      mx-auto
+      px-5
+      text-center
+      relative
+      reveal
+    "
+  >
+
+    <p
+      class="
+        uppercase
+        tracking-[.3em]
+        text-xs
+        font-bold
+        opacity-70
+      "
+    >
+      THE DAILY SETS
+    </p>
+
+
+    <h2
+      class="
+        mt-5
+        text-4xl
+        sm:text-6xl
+        font-extrabold
+        leading-tight
+      "
+    >
+      Nourish your body.
+      <br />
+      Take care of your hair.
+    </h2>
+
+
+    <p
+      class="
+        mt-6
+        max-w-2xl
+        mx-auto
+        text-black/70
+        text-lg
+        leading-8
+      "
+    >
+      Good nutrition is one part of healthy hair care.
+      Combine a balanced diet with gentle scalp care,
+      adequate sleep and a consistent lifestyle.
+    </p>
+
+
+    <a
+      href="https://www.instagram.com/_thedailyset_/"
+      target="_blank"
+      class="
+        inline-flex
+        mt-9
+        bg-black
+        text-white
+        px-8 py-4
+        rounded-full
+        font-bold
+        hover:scale-105
+        transition
+      "
+    >
+      Follow @thedailyset_
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="bg-black">
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-5 lg:px-8
+      py-10
+      flex
+      flex-col
+      md:flex-row
+      justify-between
+      gap-6
+    "
+  >
+
+    <div>
+
+      <div class="font-display font-bold text-xl">
+        thedailysets
+      </div>
+
+      <p class="text-sm text-white/40 mt-1">
+        Fitness • Nutrition • Hair Wellness
+      </p>
+
+    </div>
+
+
+    <div
+      class="
+        flex
+        flex-wrap
+        gap-6
+        text-sm
+        text-white/50
+      "
+    >
+
+      <a
+        href="#superfoods"
+        class="hover:text-green transition"
+      >
+        Superfoods
+      </a>
+
+      <a
+        href="#tips"
+        class="hover:text-green transition"
+      >
+        Daily Tips
+      </a>
+
+      <a
+        href="#guide"
+        class="hover:text-green transition"
+      >
+        Guide
+      </a>
+
+      <a
+        href="https://www.instagram.com/_thedailyset_/"
+        target="_blank"
+        class="hover:text-green transition"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="
+      border-t
+      border-white/10
+      py-5
+      text-center
+      text-xs
+      text-white/30
+    "
+  >
+    © 2026 thedailysets. Informational content only.
+  </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+  /* ---------------------------------------------
+     SCROLL REVEAL
+  --------------------------------------------- */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const observer =
+    new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+
+  revealElements.forEach((element) => {
+
+    observer.observe(element);
+
+  });
+
+
+
+  /* ---------------------------------------------
+     STAGGER FOOD CARDS
+  --------------------------------------------- */
+
+  const cards =
+    document.querySelectorAll(".food-card");
+
+
+  cards.forEach((card, index) => {
+
+    card.style.transitionDelay =
+      `${(index % 2) * 100}ms`;
+
+  });
+
+
+
+  /* ---------------------------------------------
+     NAVBAR BACKGROUND
+  --------------------------------------------- */
+
+  const header =
+    document.querySelector("header");
+
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 40) {
+
+      header.classList.add(
+        "shadow-2xl"
+      );
+
+    } else {
+
+      header.classList.remove(
+        "shadow-2xl"
+      );
+
+    }
+
+  });
+
+</script>
+
+
+</body>
+</html>
